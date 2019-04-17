@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html xmls:th="http://www.thymeleaf.org">
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8"/>
+<meta th:include='include/header::header' th:remove='tag'></meta>
 <title>Insert title here</title>
+
+<script src='js/test.js'></script>
+<script>
+$(function(){
+	test();
+});
+</script>
+
 </head>
 <body>
+<div>방명록</div>
 
+
+<a href='wrtie.do'>방명록작성</a>
+<table border='1'>
+	<tr>
+		<th>번호</th>
+		<th>이름</th>
+		<th>내용</th>
+		<th>날짜</th>
+	</tr>
+	<tr th:each='row:${list}'>
+		<td><span th:text='${row.idx}'></span></td>
+		<td><span th:text='${row.name}'></span></td>
+		<td>
+			<a th:href='@{view.do(idx=${row.idx})}'>
+				<span th:text='${row.content}'></span>	
+			</a>
+		</td>
+	</tr>
+</table>
+<img src='images/test.png'/>
 </body>
 </html>
