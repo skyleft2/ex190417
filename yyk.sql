@@ -17,7 +17,7 @@ nocache
 
 
 insert into guestbook (idx, name, email, passwd, content) values
-(guestbook_seq.nextval, 'kim', 'kim@com', '1234', '방명록')
+(guestbook_seq.nextval, 'kim3', 'kim3@com', '1234', '방명록')
 ;
 
 select * from guestbook
